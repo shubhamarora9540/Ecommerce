@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AboutUsActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/about_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANDROID ROCKZZZ.. ECOMMERCE"
+            android:textColor="#2d2d2d"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_margin="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We are a group of developers and this is our start up naming ANDROID ROCKZZZ.. ECOMMERCE"
+            android:textSize="20sp"
+            android:textColor="#2d2d2d"
+            android:textStyle="italic|bold"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Support us at ....."
+            android:textColor="#2f2f2f"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:textStyle="bold|italic"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="4"
+        android:id="@+id/about_icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/about_desc"
+        android:orientation="horizontal">
+
+
+        <com.shaishavgandhi.loginbuttons.GooglePlusButton
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/btnGG"
+            app:iconSize="30dp"
+            app:roundedCorner="true"
+            app:roundedCornerRadius="75dp"
+            android:layout_margin="8dp"/>
+
+        <com.shaishavgandhi.loginbuttons.FacebookButton android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/btnFB"
+            app:iconSize="30dp"
+            app:roundedCorner="true"
+            app:roundedCornerRadius="75dp"
+            android:layout_margin="8dp"/>
+
+        <com.shaishavgandhi.loginbuttons.TwitterButton android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/btnTW"
+            app:iconSize="30dp"
+            app:roundedCorner="true"
+            app:roundedCornerRadius="75dp"
+            android:layout_margin="8dp"
+            />
+
+        <com.shaishavgandhi.loginbuttons.LinkedInButton android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/btnLI"
+            app:iconSize="30dp"
+            app:roundedCorner="true"
+            app:roundedCornerRadius="75dp"
+            android:layout_margin="8dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

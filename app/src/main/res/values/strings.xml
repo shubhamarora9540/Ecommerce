@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">shubham_nav</string>
+    <string name="drawer_open">drawer open</string>
+    <string name="drawer_close">drawer close</string>
+
+    <string name="shr_button_next">Next</string>
+    <string name="shr_button_cancel">Cancel</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

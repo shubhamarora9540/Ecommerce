@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/my_profile"
+            android:title="Home"
+            android:icon="@drawable/home">
+        </item>
+        <item
+            android:id="@+id/stationery"
+            android:title="Stationery"
+            android:icon="@drawable/stationery">
+        </item>
+        <item
+            android:id="@+id/gifts"
+            android:title="Gifts"
+            android:icon="@drawable/gifts">
+        </item>
+        <item
+            android:id="@+id/handicraft"
+            android:title="Handicraft"
+            android:icon="@drawable/handicraft">
+        </item>
+        <item
+            android:id="@+id/sports"
+            android:title="Sports"
+            android:icon="@drawable/sports">
+        </item>
+
+    </group>
+
+
+
+        <item android:title="Offers">
+            <menu>
+                <group android:checkableBehavior="single">
+
+                    <item
+                        android:id="@+id/offer_zone"
+                        android:title="Offer Zone"
+                        android:icon="@drawable/offers">
+                    </item>
+
+                </group>
+
+            </menu>
+
+        </item>
+
+    <item android:title="Preferences">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/my_wishlist"
+                    android:title="My Wish List"
+                    android:icon="@drawable/wishlist">
+                </item>
+                <item
+                    android:id="@+id/my_cart"
+                    android:title="My Cart"
+                    android:icon="@drawable/cart">
+                </item>
+                <item
+                    android:id="@+id/my_orders"
+                    android:title="My Orders"
+                    android:icon="@drawable/my_orders">
+                </item>
+                <item
+                    android:id="@+id/my_account"
+                    android:title="My Account"
+                    android:icon="@drawable/my_account">
+                </item>
+
+            </group>
+
+        </menu>
+    </item>
+
+    <item android:title="Help Center">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/contact_us"
+                    android:title="Contact Us"
+                    android:icon="@drawable/contact_us">
+                </item>
+                <item
+                    android:id="@+id/about_us"
+                    android:title="About Us"
+                    android:icon="@drawable/about_us">
+                </item>
+                <item
+                    android:id="@+id/logout"
+                    android:title="Logout"
+                    android:icon="@drawable/logout">
+                </item>
+            </group>
+        </menu>
+
+    </item>
+
+
+
+
+
+
+
+</menu>

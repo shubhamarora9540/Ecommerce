@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.ActionBarContainer
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <android.support.v7.widget.ActionMenuView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hello there"
+            android:textSize="50dp"
+            android:textColor="#ffffff"/>
+
+
+    </android.support.v7.widget.ActionMenuView>
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/toolbar"
+        android:background="#2f2f2f"
+        android:minHeight="50dp"
+        android:fitsSystemWindows="true"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </android.support.v7.widget.Toolbar>
+
+</android.support.v7.widget.ActionBarContainer>
+
+
+
+
+
+
+
