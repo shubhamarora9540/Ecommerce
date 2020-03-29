@@ -10,6 +10,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +33,8 @@ public class SettingsFragment extends Fragment {
     View v;
     private RecyclerView recyclerView;
     private List<CategoryModel> lstCategory;
-
+    private static final String PRODUCT_URL = "http://192.168.1.11/shubhamNav/toys.php";
+    CategoryRecyclerViewAdapter categoryRecyclerViewAdapter;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -35,9 +47,9 @@ public class SettingsFragment extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = (RecyclerView)v.findViewById(R.id.home_recyclerview);
-        CategoryRecyclerViewAdapter categoryRecyclerViewAdapter = new CategoryRecyclerViewAdapter(getContext(),lstCategory);
+        categoryRecyclerViewAdapter = new CategoryRecyclerViewAdapter(getContext(),lstCategory);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
-        recyclerView.setAdapter(categoryRecyclerViewAdapter);
+
         return v;
 
     }
@@ -49,21 +61,41 @@ public class SettingsFragment extends Fragment {
 
         lstCategory = new ArrayList<>();
 
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
+        loadProducts();
 
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
-        lstCategory.add(new CategoryModel("Electronics","Description on click on the category electronics",R.drawable.about_us));
+
+       }
+
+    private void loadProducts(){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, PRODUCT_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONArray products = new JSONArray(response);
+
+                    for(int i=0;i<products.length();i++){
+                        JSONObject productObject = products.getJSONObject(i);
+
+                        int id=productObject.getInt("id");
+                        String name=productObject.getString("name");
+                        String description=productObject.getString("description");
+                        String image=productObject.getString("image");
+                       // Toast.makeText(getContext(),image+" received",Toast.LENGTH_LONG).show();
+                        lstCategory.add(new CategoryModel(name,description,image));
+                    }
+                    recyclerView.setAdapter(categoryRecyclerViewAdapter);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
+        Volley.newRequestQueue(getContext()).add(stringRequest);
     }
 
     @Override

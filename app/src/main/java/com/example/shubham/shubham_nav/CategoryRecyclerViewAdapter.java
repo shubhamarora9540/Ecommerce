@@ -14,12 +14,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
+
+
 import java.util.List;
 
 public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRecyclerViewAdapter.MyViewHolder>{
 
     private Context mContext;
     private List<CategoryModel> mData;
+
 
     public CategoryRecyclerViewAdapter(Context mContext, List<CategoryModel> mData) {
         this.mContext = mContext;
@@ -42,7 +48,12 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.tv_category.setText(mData.get(position).getName());
-        holder.img.setImageResource(mData.get(position).getImage());
+       // holder.img.setImageResource(mData.get(position).getImage());
+
+        Glide.with(mContext)
+                .load(mData.get(position).getImage())
+                .into(holder.img);
+
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,15 +61,15 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
 
 
 
-                Intent intent = new Intent(mContext,CategoryDescription.class);
+                Intent intent = new Intent(mContext,insideCategory.class);
 
                 //passing data to the description activity
 
                 intent.putExtra("category",mData.get(position).getName());
-                intent.putExtra("description",mData.get(position).getDesc());
-                intent.putExtra("thumbnail",mData.get(position).getImage());
+//                intent.putExtra("description",mData.get(position).getDesc());
+//                intent.putExtra("thumbnail",mData.get(position).getImage());
 
-                //start the activity
+//                //start the activity
                 mContext.startActivity(intent);
             }
         });

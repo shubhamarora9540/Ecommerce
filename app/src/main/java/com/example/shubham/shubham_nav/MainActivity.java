@@ -14,6 +14,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 
@@ -23,10 +25,13 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     FragmentTransaction fragmentTransaction;
     NavigationView navigationView;
+
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawerLayout =(DrawerLayout) findViewById(R.id.drawer_layout);
@@ -62,11 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
                        break;
 
-                   case R.id.gifts:
+                   case R.id.toys:
                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
                        fragmentTransaction.replace(R.id.main_container,new SettingsFragment());
                        fragmentTransaction.commit();
-                       getSupportActionBar().setTitle("Gifts");
+                       getSupportActionBar().setTitle("Toys & Games");
                        item.setChecked(true);
                        drawerLayout.closeDrawers();
                        break;
@@ -86,6 +91,16 @@ public class MainActivity extends AppCompatActivity {
                        fragmentTransaction.replace(R.id.main_container,new SportsFragment());
                        fragmentTransaction.commit();
                        getSupportActionBar().setTitle("Sports");
+                       item.setChecked(true);
+                       drawerLayout.closeDrawers();
+                       break;
+
+
+                   case R.id.gifts:
+                       fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                       fragmentTransaction.replace(R.id.main_container,new GiftsFragment());
+                       fragmentTransaction.commit();
+                       getSupportActionBar().setTitle("Gifts and Decor");
                        item.setChecked(true);
                        drawerLayout.closeDrawers();
                        break;
@@ -161,6 +176,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate( Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         actionBarDrawerToggle.syncState();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.actionbar_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main_container,new CartFragment());
+        fragmentTransaction.commit();
+        getSupportActionBar().setTitle("My Cart");
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:hint="10"
+        android:inputType="number"
         android:textColor="#2d2d2d"/>
 
     <TextView

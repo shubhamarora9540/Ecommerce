@@ -14,9 +14,9 @@
             android:icon="@drawable/stationery">
         </item>
         <item
-            android:id="@+id/gifts"
-            android:title="Gifts"
-            android:icon="@drawable/gifts">
+            android:id="@+id/toys"
+            android:title="Toys and Games"
+            android:icon="@drawable/toys">
         </item>
         <item
             android:id="@+id/handicraft"
@@ -28,6 +28,12 @@
             android:title="Sports"
             android:icon="@drawable/sports">
         </item>
+        <item
+            android:id="@+id/gifts"
+            android:title="Gifts and Decor"
+            android:icon="@drawable/gifts">
+        </item>
+
 
     </group>
 

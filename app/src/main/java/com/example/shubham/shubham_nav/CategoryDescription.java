@@ -15,7 +15,8 @@ public class CategoryDescription extends AppCompatActivity {
     FragmentTransaction fragmentTransaction;
 
     private enum Category{
-        Electronics,Toys,Gifts,Stationery,Printing,Mpc,Mobiles,Bakery,GeneralStore;
+        Notebooks,Calculator,Pen,Art,Keychains,Desk,Marker,Files,Printer,Learning,Remote,Cricket,Tennis,Hockey,Football,Badminton,Board,Table,
+        Skating,Swimming,Volley,Basketball,Boxing ;
     }
 
 
@@ -26,10 +27,10 @@ public class CategoryDescription extends AppCompatActivity {
         setContentView(R.layout.activity_category_description);
 
 
-
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.category_frame,new ElectronicFragment());
-        fragmentTransaction.commit();
+//
+//        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//        fragmentTransaction.add(R.id.category_frame,new ElectronicFragment());
+//        fragmentTransaction.commit();
 
 
 
@@ -37,38 +38,130 @@ public class CategoryDescription extends AppCompatActivity {
         Intent intent = getIntent();
 
         String category = intent.getExtras().getString("category");
+        String arr[] = category.split(" ",2);
+        category = arr[0];
         Toast.makeText(this,"Category chosen is "+category,Toast.LENGTH_LONG).show();
+
+
 
         Category input = Category.valueOf(category);
 
         switch (input){
-            case Mpc:
-                    break;
-            case Toys:
-                    break;
-            case Gifts:
+            case Notebooks :
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.category_frame,new GiftsFragment());
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
                 fragmentTransaction.commit();
-                    break;
-            case Bakery:
-                    break;
-            case Mobiles:
-                    break;
-            case Printing:
-                    break;
-            case Stationery:
-                fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.category_frame,new StationeryFragment());
-                fragmentTransaction.commit();
-                    break;
-            case Electronics:
+                break;
+            case Pen:
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
                 fragmentTransaction.commit();
                     break;
-            case GeneralStore:
+            case Calculator:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Art:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
                     break;
+            case Keychains:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Desk:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Marker:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Files:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                    break;
+            case Printer:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Learning:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Remote:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Cricket:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Tennis:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Hockey:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Football:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Badminton:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Board:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Table:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Skating:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Swimming:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Volley:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Basketball:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
+            case Boxing:
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.category_frame,new ElectronicFragment());
+                fragmentTransaction.commit();
+                break;
             default:
                     break;
         }

@@ -2,18 +2,33 @@ package com.example.shubham.shubham_nav;
 
 public class IndividualItemModel {
 
+    private int id;
     private String item_name;
-    private String in_stock;
-    private int img;
+    private double price;
+    private int quantity;
+    private String shortdesc;
+    private String img;
+
 
 
     public IndividualItemModel() {
     }
 
-    public IndividualItemModel(String item_name, String in_stock, int img) {
+    public IndividualItemModel(int id, String item_name, double price, int quantity, String shortdesc, String img) {
+        this.id = id;
         this.item_name = item_name;
-        this.in_stock = in_stock;
+        this.price = price;
+        this.quantity = quantity;
+        this.shortdesc = shortdesc;
         this.img = img;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getItem_name() {
@@ -24,19 +39,35 @@ public class IndividualItemModel {
         this.item_name = item_name;
     }
 
-    public String getIn_stock() {
-        return in_stock;
+    public double getPrice() {
+        return price;
     }
 
-    public void setIn_stock(String in_stock) {
-        this.in_stock = in_stock;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public int getImg() {
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getImg() {
         return img;
     }
 
-    public void setImg(int img) {
+    public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getShortdesc() {
+        return shortdesc;
+    }
+
+    public void setShortdesc(String shortdesc) {
+        this.shortdesc = shortdesc;
     }
 }

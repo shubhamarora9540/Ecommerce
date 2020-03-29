@@ -1,18 +1,18 @@
 package com.example.shubham.shubham_nav;
 
 public class ItemGridModel {
-    private int image;
+    private String image;
     private String itemname;
-    private String rate;
-    private String quantity;
-    private String amount;
+    private double rate;
+    private int quantity;
+    private double amount;
 
 
     public ItemGridModel() {
 
     }
 
-    public ItemGridModel(int image, String itemname, String rate, String quantity, String amount) {
+    public ItemGridModel(String image, String itemname, double rate, int quantity, double amount) {
         this.image = image;
         this.itemname = itemname;
         this.rate = rate;
@@ -20,11 +20,11 @@ public class ItemGridModel {
         this.amount = amount;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -36,27 +36,27 @@ public class ItemGridModel {
         this.itemname = itemname;
     }
 
-    public String getRate() {
+    public double getRate() {
         return rate;
     }
 
-    public void setRate(String rate) {
+    public void setRate(double rate) {
         this.rate = rate;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public String getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 }

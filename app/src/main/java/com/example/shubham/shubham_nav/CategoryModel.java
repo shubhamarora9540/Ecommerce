@@ -1,17 +1,19 @@
 package com.example.shubham.shubham_nav;
 
+import android.widget.Toast;
+
 public class CategoryModel {
 
 private String name;
 private String desc;
-private int image;
+private String image;
 
 
 
     public CategoryModel() {
     }
 
-    public CategoryModel(String name, String desc, int image) {
+    public CategoryModel(String name, String desc, String image) {
         this.name = name;
         this.desc = desc;
         this.image = image;
@@ -21,23 +23,24 @@ private int image;
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDesc() {
         return desc;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
+
     }
 }

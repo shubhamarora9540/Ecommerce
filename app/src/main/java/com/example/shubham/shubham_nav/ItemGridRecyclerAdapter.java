@@ -6,9 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -32,12 +35,16 @@ public class ItemGridRecyclerAdapter extends RecyclerView.Adapter<ItemGridRecycl
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.imageView.setImageResource(mData.get(position).getImage());
+
+        Glide.with(mContext)
+                .load(mData.get(position).getImage())
+                .into(holder.imageView);
+
         holder.name.setText(mData.get(position).getItemname());
-        holder.rate.setText(mData.get(position).getRate());
-        holder.quantity.setText(mData.get(position).getQuantity());
-        holder.amount.setText(mData.get(position).getAmount());
-    }
+        holder.rate.setText("Rs."+String.valueOf(mData.get(position).getRate()));
+        holder.quantity.setText(String.valueOf(mData.get(position).getQuantity()));
+        holder.amount.setText("Rs."+String.valueOf(mData.get(position).getAmount()));
+ }
 
     @Override
     public int getItemCount() {
@@ -51,6 +58,7 @@ public class ItemGridRecyclerAdapter extends RecyclerView.Adapter<ItemGridRecycl
         private EditText quantity;
         private TextView amount;
 
+
         public MyViewHolder(View itemView) {
             super(itemView);
 
@@ -59,6 +67,7 @@ public class ItemGridRecyclerAdapter extends RecyclerView.Adapter<ItemGridRecycl
             rate=(TextView)itemView.findViewById(R.id.cart_rate);
             quantity=(EditText)itemView.findViewById(R.id.cart_quantity);
             amount=(TextView)itemView.findViewById(R.id.cart_amount);
+
         }
     }
 }
